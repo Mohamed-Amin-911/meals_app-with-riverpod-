@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/screens/tabs.dart';
 import 'package:meals/theme/color_palletes.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -50,7 +51,11 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              onSelectScreen('meals');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TabsScreen(),
+                  ));
             },
           ),
           ListTile(

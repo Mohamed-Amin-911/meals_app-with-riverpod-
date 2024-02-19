@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals/models/meal.dart';
+import 'package:meals/providers/favourite_meals_provider.dart';
 import 'package:meals/theme/color_palletes.dart';
 import 'package:meals/theme/text_style.dart';
 
-class MealDetailsScreen extends StatefulWidget {
-  const MealDetailsScreen(
-      {super.key, required this.meal, required this.onToggleFavourite});
+class MealDetailsScreen extends ConsumerStatefulWidget {
+  const MealDetailsScreen({super.key, required this.meal});
   final Meal meal;
-  final Function(Meal meal) onToggleFavourite;
+
   @override
-  State<MealDetailsScreen> createState() => _MealDetailsState();
+  ConsumerState<MealDetailsScreen> createState() => _MealDetailsState();
 }
 
-class _MealDetailsState extends State<MealDetailsScreen> {
+class _MealDetailsState extends ConsumerState<MealDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+    final favouriteMeals = ref.watch(favouriteMealsProvider);
+    final isFavourited = favouriteMeals.contains(widget.meal);
     return Scaffold(
       backgroundColor: Palletes.bg,
       appBar: AppBar(
@@ -34,14 +37,19 @@ class _MealDetailsState extends State<MealDetailsScreen> {
           IconButton(
               onPressed: () {
                 setState(() {
-                  widget.onToggleFavourite(widget.meal);
+                  final wasAdded = ref
+                      .read(favouriteMealsProvider.notifier)
+                      .toggleMealFavoriteStatus(widget.meal);
+                  ScaffoldMessenger.of(context).clearSnackBars();
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(wasAdded == true
+                          ? "meal removed from favourites."
+                          : "meal added to favourites.")));
                 });
               },
               icon: Icon(
                 Icons.favorite_rounded,
-                // color: widget.onToggleFavourite(widget.meal)
-                //     ? Palletes.accent
-                //     : Palletes.text,
+                color: isFavourited ? Palletes.accent : Palletes.text,
               ))
         ],
       ),
