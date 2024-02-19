@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/theme/color_palletes.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key, required this.onSelectScreen});
@@ -8,23 +9,16 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Palletes.accent,
       child: Column(
         children: [
           DrawerHeader(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Theme.of(context).colorScheme.primaryContainer,
-                  Theme.of(context)
-                      .colorScheme
-                      .primaryContainer
-                      .withOpacity(0.8),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
+                gradient: LinearGradient(
+                    colors: [Palletes.bg, Palletes.bg.withOpacity(0.2)],
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft)),
             child: Row(
               children: [
                 Icon(
