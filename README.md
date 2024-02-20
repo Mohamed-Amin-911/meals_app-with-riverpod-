@@ -1,16 +1,8 @@
-# meals_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# meals_app (with riverpod)
+![Screenshot_1708386816](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/5ff42902-2dbe-4c3d-bfb9-33f57c35d0a5)
+![Screenshot_1708386870](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/91784fcd-2cd0-4e8f-a82c-bff7071d2ab4)
+![Screenshot_1708386825](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/431f9b84-aeb4-4473-beb5-1df6a57e7fc9)
+![Screenshot_1708386847](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/aeb02c1b-13e1-473f-a4df-d969e1b0b54f)
+![Screenshot_1708386831](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/37f11930-102f-4d03-978c-65b5fff85acf)
+![Screenshot_1708386858](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/ef5e6f0e-1c91-49e8-997f-558feffa2107)
+![Screenshot_1708386852](https://github.com/Mohamed-Amin-911/meals_app-with-riverpod-/assets/141561179/16c1dae2-3dcb-41f6-b78e-da1918d44b90)
